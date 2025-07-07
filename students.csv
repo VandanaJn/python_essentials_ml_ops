@@ -1,0 +1,9 @@
+StudentID,FirstName,LastName,Grade,Email,Enrolled,MathScore,ScienceScore
+1001,Alice,Johnson,10,alice.johnson@example.com,Yes,88.8,92.4
+1002,Bob,Smith,11,bob.smith@example.com,Yes,75.2,85
+1003,Charlie,Williams,10,charlie.lee@example.com,No,90.9,78
+1004,Diana,Garcia,12,diana.garcia@example.com,Yes,95,89
+1005,Ethan,Martinez,9,ethan.martinez@example.com,Yes,82,84
+1006,Fiona,Williams,11,fiona.williams@example.com,No,70,73
+1007,Zeeja,Davis,12,george.brown@example.com,Yes,88,91
+1008,Hannah,Davis,9,hannah.davis@example.com,Yes,93,90
