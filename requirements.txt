@@ -4,3 +4,4 @@ pydantic
 pytest
 pytest-xdist
 tabulate
+notebook
