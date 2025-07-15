@@ -1,5 +1,6 @@
-import sys
-def pwd_checker(pwd:str):
+# import sys
+import argparse
+def pwd_checker(pwd:str, check_common_word=True):
     common_words=["hello","test","password","abcd"]
     lenth=len(pwd)
     if lenth<8:
@@ -9,7 +10,7 @@ def pwd_checker(pwd:str):
     has_upper=any(c.isupper() for c in pwd)
     has_lower=any(c.islower() for c in pwd)
     score= int(has_digit)+int(has_special_char)+int(has_upper)+int(has_lower)
-    if any(word in pwd.lower() for word in common_words):
+    if check_common_word and any(word in pwd.lower() for word in common_words):
         score-=1
 
     if score==4:
@@ -19,10 +20,16 @@ def pwd_checker(pwd:str):
     return "weak"
 
 if __name__=="__main__":
-    if len(sys.argv)<2:
-        print("Usage: password_checker.py <password>")
-    else:
-        print(f"{sys.argv[1]} is {pwd_checker(sys.argv[1])}")
+    parser=argparse.ArgumentParser("This is a passwordchecker")
+    parser.add_argument("-password",help="password to evaluate")
+    parser.add_argument("-chk_cmn_wrd",action="store_true")
+    args=parser.parse_args()
+    print(args.chk_cmn_wrd)
+    print(f"{args.password} is {pwd_checker(args.password, args.chk_cmn_wrd)}")
+    # if len(sys.argv)<2:
+    #     print("Usage: password_checker.py <password>")
+    # else:
+    #     print(f"{sys.argv[1]} is {pwd_checker(sys.argv[1])}")
 
 
 
