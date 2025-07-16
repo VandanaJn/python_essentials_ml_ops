@@ -20,9 +20,9 @@ def pwd_checker(pwd:str, check_common_word=True):
     return "weak"
 
 if __name__=="__main__":
-    parser=argparse.ArgumentParser("This is a passwordchecker")
-    parser.add_argument("-password",help="password to evaluate")
-    parser.add_argument("-chk_cmn_wrd",action="store_true")
+    parser=argparse.ArgumentParser(description="This is a passwordchecker")
+    parser.add_argument("--password",help="password to evaluate")
+    parser.add_argument("--chk_cmn_wrd",action="store_true",help="glg for checking common words")
     args=parser.parse_args()
     print(args.chk_cmn_wrd)
     print(f"{args.password} is {pwd_checker(args.password, args.chk_cmn_wrd)}")
