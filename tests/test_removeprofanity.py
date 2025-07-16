@@ -1,4 +1,4 @@
-from removeprofanity import clean_comments
+from remove_profanity import clean_comments
 # import pdb
 class TestRemoveProfanity:
     def setup_method(self):
