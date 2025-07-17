@@ -1,6 +1,6 @@
 # 🐍 python_essentials_ml_ops
 
-A personal learning repository documenting my journey through Python programming and foundational MLOps concepts. This space serves as a reference and sandbox for experimenting with data handling, environment setup, and statistical techniques — all essential building blocks for machine learning workflows.
+A personal learning repository documenting my journey through Python programming and foundational MLOps concepts. This space serves as a reference and sandbox for experimenting with data handling, environment setup, statistical techniques, and lightweight API development — all essential building blocks for modern machine learning workflows.
 
 ---
 
@@ -11,6 +11,7 @@ A personal learning repository documenting my journey through Python programming
 - Practice testing with `pytest`
 - Understand statistical methods for data quality and outlier detection
 - Apply concepts from the MLOps specialization by Duke University on Coursera
+- Build and deploy simple APIs using FastAPI and Flask
 
 ---
 
@@ -25,14 +26,17 @@ A personal learning repository documenting my journey through Python programming
 - Debugging workflows with `pdb`
 - Automated testing with `pytest`
 - Environment setup and project structure
+- API development with FastAPI
+- API development with Flask
+
 
 ---
 
 ## 🧪 Learning Sources
 
 - [MLOps | Machine Learning Operations Specialization – Duke University](https://www.coursera.org/specializations/mlops-duke)
-- Official documentation (Python, pandas, NumPy, matplotlib)
-- Blog posts and tutorial notebooks from the data science community
+- Official documentation (Python, pandas, NumPy, matplotlib, FastAPI, Flask)
+- Blog posts and tutorial notebooks from the data science and ML engineering community
 
 ---
 
@@ -42,9 +46,14 @@ A personal learning repository documenting my journey through Python programming
 
 - **notebooks/**: Jupyter notebooks for exploring code, visualizations, and experiments  
 - **tests/**: Unit tests using `pytest`  
+- **fastapi/**: Lightweight API projects using FastAPI 
+- **webapp/**: Lightweight API projects using Flask 
 
 All other code and notes are currently organized at the root level for simplicity.
 
+---
+
+### 🚀 Getting Started
 
 Clone the repo and start experimenting:
 ```bash

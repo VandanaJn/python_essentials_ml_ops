@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2em;
+        }
+        input, button {
+            padding: 0.5em;
+            font-size: 1em;
+        }
+        #result {
+            margin-top: 1em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🕒 Time Generator</h1>
+    <p>Enter a <code>strftime</code> format (or leave blank for default):</p>
+    <input type="text" id="format" placeholder="%Y-%m-%dT%H:%M:%S.%f" />
+    <button onclick="generateTime()">Generate</button>
+
+    <div id="result"></div>
+
+    <script>
+        async function generateTime() {
+            const format = document.getElementById("format").value;
+            const response = await fetch("/generate", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ strftime: format || null })
+            });
+
+            const data = await response.json();
+            document.getElementById("result").textContent = "Generated Time: " + data.date;
+        }
+    </script>
+</body>
+</html>
