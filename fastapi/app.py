@@ -23,3 +23,6 @@ def generate(body: Body):
     """
     tmpl = body.strftime or "%Y-%m-%dT%H:%M:%S.%f"
     return {"date": datetime.now().strftime(tmpl)}
+
+#to run locally
+#uvicorn --host 0.0.0.0 app:app
