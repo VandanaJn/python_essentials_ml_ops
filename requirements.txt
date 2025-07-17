@@ -7,3 +7,4 @@ tabulate
 notebook
 numpy
 click
+flask
