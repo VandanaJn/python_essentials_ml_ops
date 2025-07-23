@@ -1,6 +1,6 @@
 try:
-    with open("sample1.txt","a+") as file:
-        file.writelines(["\nthis is a new line","\nthis is a new line"])
+    with open("sample1.txt", "a+", encoding="utf-8") as file:
+        file.writelines(["\nthis is a new line", "\nthis is a new line"])
         file.seek(0)
         print(file.read())
         file.writelines("\nappended")

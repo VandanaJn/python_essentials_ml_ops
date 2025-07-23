@@ -1,6 +1,6 @@
 import click
 import pandas as pd
-from datetime import datetime
+
 
 def carriage_returns(df):
     for index, row in df.iterrows():
@@ -27,6 +27,7 @@ def zero_count_columns(df):
             bad_columns.append(key)
     return bad_columns
 
+
 def raw_header_duplicates(filename):
     with open(filename, "r", encoding="utf-8") as f:
         header = f.readline().strip().split(",")
@@ -38,13 +39,14 @@ def raw_header_duplicates(filename):
         seen.add(col)
     return duplicates
 
+
 @click.command()
-@click.argument('filename', type=click.Path(exists=True))
+@click.argument("filename", type=click.Path(exists=True))
 def main(filename):
-    df = pd.read_csv(filename,dtype=str)
-    
+    df = pd.read_csv(filename, dtype=str)
+
     duplicates = raw_header_duplicates(filename)
-    if len(duplicates)>0:
+    if len(duplicates) > 0:
         click.echo(f"Warning: found duplicate columns: {duplicates}")
 
     for column in zero_count_columns(df):
@@ -55,12 +57,15 @@ def main(filename):
     carriage_field = carriage_returns(df)
     if carriage_field:
         index, column, field = carriage_field
-        click.echo((
-           f"Warning: found carriage returns at index {index}"
-           f" of column '{column}':")
+        click.echo(
+            (
+                f"Warning: found carriage returns at index {index}"
+                f" of column '{column}':"
+            )
         )
         click.echo(f"         '{field[:50]}'")
 
-if __name__=="__main__":
-    main()
 
+# pylint: disable=no-value-for-parameter
+if __name__ == "__main__":
+    main()

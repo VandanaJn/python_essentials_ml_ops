@@ -1,4 +1,10 @@
-from setuptools import setup, find_packages
+"""
+python setup.py develop - install for active development
+python setup.py install - installs it
+pip install . - installs it
+pip install -e . - install for active development
+python setup.py bdist_wheel - creates wheel package
+"""
 
 from setuptools import setup
 
@@ -18,15 +24,7 @@ setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent"
+        "Operating System :: OS Independent",
     ],
-    python_requires=">=3.9"
+    python_requires=">=3.9",
 )
-
-'''
-python setup.py develop - install for active development
-python setup.py intall - installs it
-pip intall . - installs it
-pip install -e . - install for active development
-python setup.py bdist_wheel - creates wheel package
-'''
