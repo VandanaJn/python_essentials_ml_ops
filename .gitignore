@@ -4,3 +4,4 @@ high_math_score.csv
 dist/*
 build/*
 *.egg-info/*
+.coverage
