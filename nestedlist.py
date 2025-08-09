@@ -1,23 +1,16 @@
-nested_list = [{"a": "b"}, 1, [2, [3, {4, 5, "text"}], 6], 7, (4, 5)]
-
-
-def flatten_r(nested, flat_list=None):
+def flatten_recursive(nested, flat_list=None):
     if not flat_list:
         flat_list = []
     for it in nested:
         if isinstance(it, (str, bytes)):
             flat_list.append(it)
+        elif isinstance(it, set):
+            flatten_recursive(sorted(it, key=lambda x: str(x)), flat_list)
         elif hasattr(it, "__iter__"):
-            flatten_r(it, flat_list)
+            flatten_recursive(it, flat_list)
         else:
             flat_list.append(it)
     return flat_list
-
-
-print(flatten_r(nested_list))
-
-nested_list = [{"a": "b"}, 1, [2, [3, {4, 5, "text"}], 6], 7, (4, 5)]
-
 
 def flatten(nested):
     flat_list = []
@@ -28,10 +21,9 @@ def flatten(nested):
             flat_list.append(it)
         elif hasattr(it, "__iter__"):
             if isinstance(it, set):
-                stack.extend(it)
+                stack.extend(sorted(it, key=lambda x: str(x)))
             elif isinstance(it, dict):
-                stack.extend(reversed(it.values()))
-                stack.extend(reversed(it.keys()))
+                stack.extend(reversed(list(it.items())))
             else:
                 stack.extend(reversed(it))
         else:
@@ -39,4 +31,4 @@ def flatten(nested):
     return flat_list
 
 
-print(flatten(nested_list))
+# print(flatten(nested_list))
