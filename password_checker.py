@@ -31,7 +31,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     print(args.chk_cmn_wrd)
     print(f"{args.password} is {pwd_checker(args.password, args.chk_cmn_wrd)}")
-    # if len(sys.argv)<2:
-    #     print("Usage: password_checker.py <password>")
-    # else:
-    #     print(f"{sys.argv[1]} is {pwd_checker(sys.argv[1])}")
+

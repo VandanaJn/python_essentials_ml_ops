@@ -11,7 +11,7 @@ def get_words_count(file_name):
     return words_count
 
 
-def get_top_words_dict(words_count, top_n=10):
+def get_top_words_v2(words_count, top_n=10):
     sorted_words = sorted(words_count.items(), key=lambda item: item[1], reverse=True)
     return sorted_words[:top_n]
 
@@ -21,11 +21,3 @@ def get_top_words(words_count, top_n=10):
         words_count.keys(), key=lambda key: words_count[key], reverse=True
     )
     return sorted_words[:top_n]
-
-
-if __name__ == "__main__":
-    w_count = get_words_count("sample.txt")
-    get_top_words = get_top_words(w_count, 10)
-
-    for wrd in get_top_words:
-        print(f"{wrd}: {w_count[wrd]}")
