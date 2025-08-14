@@ -1,9 +1,11 @@
 install:
-	pip install --upgrade pip &&\
+	python -m pip install --upgrade pip &&\
 		pip install -r requirements.txt
 
 test:
-	python -m pytest -vvv --cov=. --cov-config=.coveragerc
+	python -m pytest -vvv --cov=. --cov-config=.coveragerc &&\
+	python -m pytest --nbval-lax notebooks
+	
 
 debug:
 	python -m pytest -vv --pdb	#Debugger is invoked
